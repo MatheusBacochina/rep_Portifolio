@@ -1,0 +1,275 @@
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    background: #222636;
+}
+.App{
+    overflow-x: hidden;
+}
+.header{
+    width: 100vw;
+    max-width: 1100px;
+    height: 400px;
+    background: radial-gradient(50% 50% at 50% 50%, #6323A5 0%, #202833 99.97%, #212535 99.98%);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+nav{
+width: 100%;
+height: 100px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+
+
+.logo{
+    margin-top: 15px;
+    width: 100px;
+    height: 70px;
+    background: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 0px;
+    background-position: center;
+}
+
+}
+
+.links{
+
+    padding: 10px 10px;
+
+    a{
+        cursor: pointer;
+        font-family: Reem Kufi;
+        font-style: normal;
+        font-weight: normal;
+        color: #fff7f7;
+        margin: 0 10px;
+        position: relative;
+         
+    }
+    
+}
+
+a::before{
+    content: '';
+    right: 105%;
+    width: 4px;
+    height: 0;
+    background-color: rgb(89, 0, 255);
+    position: absolute;
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.linkInicio::before{
+    content: '';
+    right: 105%;
+    width: 4px;
+    height: 0;
+    background-color: rgb(89, 0, 255);
+    position: absolute;
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+a:hover::before{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.hamburger{
+    width: 60px;
+    height: 60px;
+    display: none;
+}
+
+
+@media screen and  (max-width: 600px) {
+
+    .links{
+        display: none;
+    }
+
+    .logo{
+        justify-self: center;
+    
+    }
+    
+    .hamburger{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        right: 50px;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .line{
+        width: 70%;
+        height: 3px;
+        background-color: white;
+        transform: rotate(0);
+    }
+}
+
+.activeHamb{
+    
+    .line{
+        position: absolute;
+        transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .treeLine{
+        transform: rotate(-45deg);
+    }
+    .twoLine{
+        display: none;
+    }
+    .oneLine{
+        transform: rotate(45deg);
+    }
+
+}
+
+.menu{
+    z-index: 100;
+    position: absolute;
+    width: 200px;
+    height: 80vh;
+    right: 0;
+    top: 100px;
+    transform: translateX(200%);
+    transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px;
+    
+    &::before{
+            content: "";
+            border-radius: 5px;
+            position: absolute;
+            background: inherit;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.2;
+            box-shadow: inset 0 0 2000px rgba(255, 255, 255,  255)
+    }
+
+}
+
+.activeMenu{
+    transform: translateX(0%)
+}
+
+.li{
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    position: relative;
+}
+
+
+.li::before{
+    content: '';
+    right: 35%;
+    width: 4px;
+    height: 0;
+    background-color: rgb(89, 0, 255);
+    position: absolute;
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.li:hover::before{
+    height: 20px;
+    background-color: white;
+}
+
+.tiny::before{
+    right: 50%;
+}
+
+.ball{
+    width: 100px;
+    height: 100px;
+    top: 37%;
+    position: absolute;
+    right: 15%;
+    background: url('../images/Ball.svg');
+    background-size: cover;
+    background-position: center;
+    animation: aniBallOne 4s cubic-bezier(0.65,0.05,0.36,1) infinite;
+    animation-delay: 0.5s;
+}
+
+.ball.two{
+    width: 150px;
+    height: 150px;
+    top: 56%;
+    right: 5%;
+    animation: aniBallOne 4s cubic-bezier(0.65,0.05,0.36,1) infinite;
+    animation-delay: 0.3s;
+}
+
+
+
+.ball.tree{
+    width: 200px;
+    height: 200px;
+    top: 80%;
+    right: 15%;
+    z-index: 10;
+    animation: aniBallOne 4s cubic-bezier(0.65,0.05,0.36,1) infinite;
+}
+
+@keyframes aniBallOne{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10%);
+
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.linkInicio{
+    background-color: none;
+}
+
+.a{
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    overflow: scroll;
+}
+
+.b{
+    width: 4000px;
+    height: 331px;
+
+}

@@ -1,0 +1,28 @@
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(50% 50% at 50% 50%, #6323A5 0%, #202833 99.97%, #212535 99.98%);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.lod{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 10px solid rgb(179, 132, 255);
+    border-top-color: rgb(22, 0, 51);
+    animation: roda 1s infinite cubic-bezier(0.23, 1, 0.320, 1) ;
+} 
+
+
+
+@keyframes roda {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
