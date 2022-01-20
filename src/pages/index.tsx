@@ -6,11 +6,18 @@ import {Section} from '../components/section'
 
 function Index() {
   const [val, abrir] = useHamb()
-  
+
+  window.onresize = (e) =>{
+   if(window.innerWidth >= 600 && val){
+     abrir()
+   }
+  }
+
   
 
   return (
     <div className="App">
+      {val && <div onClick={() => abrir()} className="bgRemoveMenu"></div>}
       <header className='header'>
         <nav>
           <div className='logo' />
@@ -59,16 +66,16 @@ function Index() {
           
         </div>
 
+          <div className="meInfo">
+            <h1>Matheus Bacochina</h1>
+            <h3>Front End</h3>
+          </div>
+
       </header>
 
-         <Section green />
+         <Section green={true} />
 
-         <div className="a">
-           <div className="b">
-
-           </div>
-         </div>
-
+       
     </div>
   
   );

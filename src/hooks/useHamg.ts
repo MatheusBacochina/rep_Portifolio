@@ -3,17 +3,18 @@ import { useState } from "react"
 
 interface props{
     bool: boolean,
-    setbool: any
+    setbool: () => void 
 }
 
 
-export function useHamb(){
+export function useHamb( ){
 
     const [bool, setbool] = useState<props | any>(false)
 
 
     function abrir(){
         setbool((prev: boolean) => !prev)
+ 
     }
    
 
