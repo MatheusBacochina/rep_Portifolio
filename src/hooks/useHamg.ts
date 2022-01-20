@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 interface props{
-    bool: boolean,
+    bool: boolean, 
     setbool: () => void 
 }
 
