@@ -7,7 +7,7 @@ function App() {
   const Index = lazy(() => import('./pages/index')) 
 
   return (
-    <Suspense fallback={() => <Loading />}>
+    <Suspense fallback={ '<Loading />'}>
      <Index />
     </Suspense>
   );

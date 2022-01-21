@@ -1,8 +1,9 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, lazy, Suspense } from 'react';
 import '../styles/header.scss'
+import '../styles/planets.scss'
 import {useHamb} from '../hooks/useHamg'
 import {Section} from '../components/section'
-
+import Animation from '../components/animation'
 
 function Index() {
   const [val, abrir] = useHamb()
@@ -73,9 +74,11 @@ function Index() {
 
       </header>
 
-         <Section green={true} />
-
-       
+         <Section green={true}>
+          
+         </Section>
+        
+         <div className="planets"><Animation></Animation></div>
     </div>
   
   );

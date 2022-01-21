@@ -1,0 +1,12 @@
+.planets{
+    width: 100%;
+    max-width: 1100px;
+    height: 600px;
+    background: rgb(1, 0, 42);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
+    position: absolute;
+    top: 850px;
+}
